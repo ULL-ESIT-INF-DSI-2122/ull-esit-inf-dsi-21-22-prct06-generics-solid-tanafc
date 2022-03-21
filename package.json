@@ -6,6 +6,7 @@
   "scripts": {
     "index": "tsc-watch --onSuccess \"node dist/ejercicio-1/index.js\"",
     "test": "mocha",
+    "coverage": "nyc npm test",
     "doc": "typedoc"
   },
   "keywords": [],
@@ -17,9 +18,11 @@
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "@typescript-eslint/parser": "^5.13.0",
     "chai": "^4.3.6",
+    "coveralls": "^3.1.1",
     "eslint": "^8.10.0",
     "eslint-config-google": "^0.14.0",
     "mocha": "^9.2.1",
+    "nyc": "^15.1.0",
     "scanf": "^1.1.2",
     "ts-node": "^10.7.0",
     "tsc-watch": "^4.6.0",
