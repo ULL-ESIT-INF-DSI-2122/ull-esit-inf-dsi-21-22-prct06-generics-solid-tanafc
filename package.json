@@ -6,7 +6,7 @@
   "scripts": {
     "index": "tsc-watch --onSuccess \"node dist/ejercicio-1/combat.js\"",
     "test": "mocha",
-    "coverage": "nyc npm test",
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls && rm -rf .nyc_output",
     "doc": "typedoc"
   },
   "keywords": [],
