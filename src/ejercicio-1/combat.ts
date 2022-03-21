@@ -35,6 +35,7 @@ export class Combat<T extends Fighter, U extends Fighter> {
     // } else {
     //   console.log(`${dmg} damage`);
     // }
+    //
     return dmg;
   }
 

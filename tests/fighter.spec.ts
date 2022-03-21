@@ -6,6 +6,7 @@ import {LeagueOfLegends} from '../src/ejercicio-1/league';
 import {Tekken} from '../src/ejercicio-1/tekken';
 import {Fighter} from '../src/ejercicio-1/fighter';
 
+
 describe('Pokemon function tests', () => {
   let pikachu = new Pokemon("Pikachu", "Electric", 20, 5, 55, 40, 90, 35, 'Ash');
   let eevee = new Pokemon("Eevee", "Electric", 20, 5, 55, 40, 90, 35);
