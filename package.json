@@ -4,7 +4,7 @@
   "description": "",
   "main": "",
   "scripts": {
-    "pokedex": "tsc-watch --onSuccess \"node dist/ejecicio-1/pokedex.js\"",
+    "index": "tsc-watch --onSuccess \"node dist/ejercicio-1/index.js\"",
     "test": "mocha",
     "doc": "typedoc"
   },
