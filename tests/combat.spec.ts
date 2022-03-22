@@ -27,6 +27,6 @@ describe('Combat class function tests', () => {
   });
 
   it('The combat begins correctly and returns the winner', () => {
-    expect(combat.start()).to.be.equal("Chrom");
+    expect(combat.start()).to.be.equal("Chikorita");
   });
 });

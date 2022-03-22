@@ -1,4 +1,4 @@
-import {Fighter} from './fighter';
+import {Effectivity, Fighter} from './fighter';
 
 type weaponType = "Axe" | "Sword" | "Spear";
 
@@ -7,7 +7,7 @@ export class FireEmblem extends Fighter {
       attack: number, defense: number, speed: number, hitPoints: number,
       weight: number, height: number, private mount: boolean, catchingPhrase?: string) {
     super(hero, mount ? attack * 0.5 : attack, mount ? defense * 2 : defense, mount ? speed * 3 : speed,
-        mount ? hitPoints * 2 : hitPoints, weight, height, catchingPhrase);
+        mount ? hitPoints * 2 : hitPoints, weight, height, "Warrior", "FireEmblem", catchingPhrase);
   }
 
   public getWeapon(): weaponType {
@@ -18,7 +18,39 @@ export class FireEmblem extends Fighter {
     return this.mount;
   }
 
-  public getEffectivity(): number {
-    return 0;
+  public getEffectivity(opponent: FireEmblem): Effectivity {
+    let typeAdvantage: Effectivity;
+
+    switch (opponent.getWeapon()) {
+      case "Sword":
+        if (this.getWeapon() == "Spear") {
+          typeAdvantage = "NotEffective";
+        } else if (this.getWeapon() == "Axe") {
+          typeAdvantage = "Effective";
+        } else {
+          typeAdvantage = "Neutral";
+        }
+        break;
+
+      case "Spear":
+        if (this.getWeapon() == "Sword") {
+          typeAdvantage = "Effective";
+        } else if (this.getWeapon() == "Axe") {
+          typeAdvantage = "NotEffective";
+        } else {
+          typeAdvantage = "Neutral";
+        }
+        break;
+
+      case "Axe":
+        if (this.getWeapon() == "Spear") {
+          typeAdvantage = "Effective";
+        } else if (this.getWeapon() == "Sword") {
+          typeAdvantage = "NotEffective";
+        } else {
+          typeAdvantage = "Neutral";
+        }
+    }
+    return typeAdvantage;
   }
 }

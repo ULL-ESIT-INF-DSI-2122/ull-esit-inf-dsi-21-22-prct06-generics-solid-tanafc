@@ -1,8 +1,12 @@
+export type FightingRole = "Beast" | "Mage" | "Warrior"
+export type Effectivity = "Effective" | "NotEffective" | "Neutral"
+
 export abstract class Fighter {
   constructor(protected name: string,
     protected attack: number, protected defense: number,
     protected speed: number, protected hitPoints: number,
     protected weight: number, protected height: number,
+    protected role: FightingRole, protected universe: string,
     protected catchingPhrase?: string) {
   }
 
@@ -38,6 +42,14 @@ export abstract class Fighter {
     return this.height;
   }
 
+  public getUniverse(): string {
+    return this.universe;
+  }
+
+  public getFightingRole(): FightingRole {
+    return this.role;
+  }
+
   public getCatchingPhrase(): string {
     if (this.catchingPhrase) {
       return this.catchingPhrase;
@@ -46,5 +58,5 @@ export abstract class Fighter {
     }
   }
 
-  abstract getEffectivity(): number;
+  abstract getEffectivity(opponent: Fighter): Effectivity;
 }
