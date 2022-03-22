@@ -1,10 +1,11 @@
-import {Fighter} from './fighter';
+import {FightingRole, Fighter} from './fighter';
 
 /**
  * Stores an entry with the information related to a Fighter
  */
 type entryFighter = [name: string, attack: number, defense: number,
-    speed: number, hitPoints: number, weight: number, height: number];
+    speed: number, hitPoints: number, weight: number, height: number,
+    role: FightingRole, universe: string];
 
 /**
  * Class Pokedex that stores the entries with information about Pokemons
@@ -25,7 +26,8 @@ export class Pokedex {
   public storeFighters(...fighters: Fighter[]): void {
     fighters.forEach((fighter) => {
       this.entries.push([fighter.getName(), fighter.getAttack(), fighter.getDefense(),
-        fighter.getSpeed(), fighter.getHitPoints(), fighter.getWeight(), fighter.getHeight()]);
+        fighter.getSpeed(), fighter.getHitPoints(), fighter.getWeight(), fighter.getHeight(),
+        fighter.getFightingRole(), fighter.getUniverse()]);
     });
   }
 

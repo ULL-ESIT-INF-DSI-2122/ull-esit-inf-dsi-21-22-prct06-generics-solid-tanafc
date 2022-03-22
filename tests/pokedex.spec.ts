@@ -8,15 +8,15 @@ import {LeagueOfLegends} from '../src/ejercicio-1/league';
 
 
 describe('Pokedex class function tests', () => {
-  let pokedex = new Pokedex(["Pikachu", 20, 5, 55, 50, 55, 55]);
+  let pokedex = new Pokedex(["Pikachu", 20, 5, 55, 50, 55, 55, "Beast", "Pokemon"]);
 
   it('It creates a new instance of an object with class Pokedex', () => {
     expect(pokedex).to.be.instanceOf(Pokedex);
   });
 
-  it('There is an array of entries for the information of Pokemons', () => {
+  it('There is an array of entries for the information of Fighters', () => {
     expect("entries" in pokedex).to.be.true;
-    expect(pokedex.entries).to.be.eql([["Pikachu", 20, 5, 55, 50, 55, 55]]);
+    expect(pokedex.entries).to.be.eql([["Pikachu", 20, 5, 55, 50, 55, 55, "Beast", "Pokemon"]]);
   });
 
   it('Stores the data of the given Fighters', () => {
@@ -27,18 +27,18 @@ describe('Pokedex class function tests', () => {
     pokedex.storeFighters(charmander, king, chrom, veigar);
 
     expect(pokedex.entries).to.be.eql([
-      ["Pikachu", 20, 5, 55, 50, 55, 55],
-      ["Charmander", 20, 5, 55, 40, 10, 20],
-      ["King", 70, 50, 10, 110, 55, 40],
-      ["Chrom", 20, 5, 55, 50, 55, 55],
-      ["Veigar", 50, 40, 40, 55, 10, 10]]);
+      ["Pikachu", 20, 5, 55, 50, 55, 55, "Beast", "Pokemon"],
+      ["Charmander", 20, 5, 55, 40, 10, 20, "Beast", "Pokemon"],
+      ["King", 70, 50, 10, 110, 55, 40, "Warrior", "Tekken"],
+      ["Chrom", 20, 5, 55, 50, 55, 55, "Warrior", "FireEmblem"],
+      ["Veigar", 50, 40, 40, 55, 10, 10, "Mage", "Runaterra"]]);
   });
 
   it('Deletes the entries of the Pokemon given its names', () => {
     pokedex.deleteFighters("Pikachu", "Veigar");
     expect(pokedex.entries).to.be.eql([
-      ["Charmander", 20, 5, 55, 40, 10, 20],
-      ["King", 70, 50, 10, 110, 55, 40],
-      ["Chrom", 20, 5, 55, 50, 55, 55]]);
+      ["Charmander", 20, 5, 55, 40, 10, 20, "Beast", "Pokemon"],
+      ["King", 70, 50, 10, 110, 55, 40, "Warrior", "Tekken"],
+      ["Chrom", 20, 5, 55, 50, 55, 55, "Warrior", "FireEmblem"]]);
   });
 });
