@@ -6,7 +6,8 @@
     "./src/ejercicio-1/league.ts",
     "./src/ejercicio-1/pokedex.ts",
     "./src/ejercicio-1/pokemon.ts",
-    "./src/ejercicio-1/tekken.ts"
+    "./src/ejercicio-1/tekken.ts",
+    "./src/modificacion/modificacion.ts"
   ],
   "out": "./docs"
 }
