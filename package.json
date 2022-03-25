@@ -6,6 +6,7 @@
   "scripts": {
     "combat": "tsc-watch --onSuccess \"node dist/ejercicio-1/combat.js\"",
     "mod": "tsc-watch --onSuccess \"node dist/modificacion/modificacion.js\"",
+    "cypher": "tsc-watch --onSuccess \"node dist/ejercicio-3/cifrado.js\"",
     "test": "mocha",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls && rm -rf .nyc_output",
     "doc": "typedoc"
@@ -24,7 +25,6 @@
     "eslint-config-google": "^0.14.0",
     "mocha": "^9.2.1",
     "nyc": "^15.1.0",
-    "scanf": "^1.1.2",
     "ts-node": "^10.7.0",
     "tsc-watch": "^4.6.0",
     "typedoc": "^0.22.13"
