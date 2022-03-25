@@ -7,6 +7,11 @@
     "./src/ejercicio-1/pokedex.ts",
     "./src/ejercicio-1/pokemon.ts",
     "./src/ejercicio-1/tekken.ts",
+    "./src/ejercicio-2/basic_streamable.ts",
+    "./src/ejercicio-2/documentaries.ts",
+    "./src/ejercicio-2/movies.ts",
+    "./src/ejercicio-2/series.ts",
+    "./src/ejercicio-2/streamable.ts",
     "./src/modificacion/modificacion.ts"
   ],
   "out": "./docs"
