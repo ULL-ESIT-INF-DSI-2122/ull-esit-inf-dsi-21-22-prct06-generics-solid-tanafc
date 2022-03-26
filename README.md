@@ -609,10 +609,10 @@ Si ejecutamos las pruebas, observaremos como la implementación de la clase `Com
 ![Ejecución pruebas Combat](./img/combat1.PNG)
 
 ![Ejecución pruebas Combat](./img/combat2.PNG)
->> Chikorita pertenece al universo Pokemon, mientras que Chrom pertenece a Fire Emblem. Como los personajes de Fire Emblem se establecen con un rol de `Warrior`, los Pokemons al ser `Beast` obtienen la ventaja.
+> Chikorita pertenece al universo Pokemon, mientras que Chrom pertenece a Fire Emblem. Como los personajes de Fire Emblem se establecen con un rol de `Warrior`, los Pokemons al ser `Beast` obtienen la ventaja.
 
 ![Ejecución pruebas Combat](./img/combat3.PNG)
->> El combate entre dos personajes del mismo universo se llevará a cabo mediante las reglas de eficacia de ese universo. En este caso, en el universo de Tekken, Eddy practica Capoeira, lo cual no es efectivo contra King, campeón de Wrestling.
+> El combate entre dos personajes del mismo universo se llevará a cabo mediante las reglas de eficacia de ese universo. En este caso, en el universo de Tekken, Eddy practica Capoeira, lo cual no es efectivo contra King, campeón de Wrestling.
 
 #### Clase Pokedex
 Por último, se implementa una clase `Pokedex`, que ahora almacenará la información relativa a todos los luchadores de distintos universos. Para ello, se empleará un tipo `entryFighter`, que contendrá tanto el nombre, estadísticas base, rol dentro del universo y el nombre del universo al que pertenece.
