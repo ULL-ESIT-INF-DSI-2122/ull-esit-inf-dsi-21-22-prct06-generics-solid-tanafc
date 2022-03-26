@@ -8,7 +8,7 @@ import {Fighter} from '../src/ejercicio-1/fighter';
 
 
 describe('Pokemon function tests', () => {
-  let pikachu = new Pokemon("Pikachu", "Electric", 20, 5, 55, 40, 90, 35, 'Ash');
+  let pikachu = new Pokemon("Pikachu", "Electric", 20, 5, 55, 40, 90, 35, 'Ash', 'Pika');
   let squirtle = new Pokemon("Squirtle", "Water", 20, 5, 55, 40, 90, 35, 'Ash');
   let flareon = new Pokemon("Flareon", "Fire", 20, 5, 55, 40, 90, 35);
   let eevee = new Pokemon("Eevee", "Electric", 20, 5, 55, 40, 90, 35);
@@ -26,8 +26,17 @@ describe('Pokemon function tests', () => {
     expect([eevee.getName(), eevee.getAlias()]).to.be.eql(['Eevee', 'Este pokemon no tiene un mote']);
   });
 
+  it('There is a method to set the alias of a Pokemon', () => {
+    eevee.setAlias("Evo");
+    expect(eevee.getAlias()).to.be.equal("Evo");
+  });
+
   it('There is an attribute for its weight and height', () => {
     expect([pikachu.getWeight(), pikachu.getHeight()]).to.be.eql([90, 35]);
+  });
+
+  it('There is an attribute for its catching phrase', () => {
+    expect(pikachu.getCatchingPhrase()).to.be.equal("Pika");
   });
 
   it('There is an attribute for its type', () => {
@@ -48,8 +57,8 @@ describe('Pokemon function tests', () => {
 
 
 describe('Fire Emblem function tests', () => {
-  let chrom = new FireEmblem("Chrom", "Sword", 20, 5, 55, 40, 90, 35, false);
-  let byleth = new FireEmblem("Byleth", "Spear", 20, 5, 55, 40, 90, 35, false);
+  let chrom = new FireEmblem("Chrom", "Sword", 20, 5, 55, 40, 90, 35, false, "For the Kingdom!");
+  let byleth = new FireEmblem("Byleth", "Spear", 20, 5, 55, 40, 90, 35, true);
   let ike = new FireEmblem("Ike", "Axe", 20, 5, 55, 40, 90, 35, false);
 
   it('It creates a new instance of an object with class FireEmblem', () => {
@@ -69,9 +78,18 @@ describe('Fire Emblem function tests', () => {
     expect([chrom.getWeight(), chrom.getHeight()]).to.be.eql([90, 35]);
   });
 
+  it('There is an attribute for its catching phrase', () => {
+    expect(chrom.getCatchingPhrase()).to.be.equal("For the Kingdom!");
+  });
+
   it('There is an attribute for each of its base stats', () => {
     expect([chrom.getAttack(), chrom.getDefense(), chrom.getSpeed(),
       chrom.getHitPoints()]).to.be.eql([20, 5, 55, 40]);
+  });
+
+  it('There is an attribute to check if the unit is mounted', () => {
+    expect(chrom.isMounted()).to.be.false;
+    expect(byleth.isMounted()).to.be.true;
   });
 
   it('There is a method that calculates the effectiveness of attacks between heroes', () => {
@@ -106,6 +124,26 @@ describe('Tekken function tests', () => {
     expect([eddy.getWeight(), eddy.getHeight()]).to.be.eql([90, 180]);
   });
 
+  it('There is an attribute for its nacionality', () => {
+    expect(kazuya.getNacionality()).to.be.equal("Japanese");
+  });
+
+  it('There is an attribute for its catching phrase', () => {
+    expect(kazuya.getCatchingPhrase()).to.be.equal("Worthless");
+  });
+
+  it('There is an attribute for its rage stat', () => {
+    expect(kazuya.getRage()).to.be.equal(5);
+  });
+
+  it('There is an attribute for its devil gene stat', () => {
+    expect(kazuya.getDevilGene()).to.be.equal(10);
+  });
+
+  it('There is an attribute for its martial art', () => {
+    expect(kazuya.getMartialArt()).to.be.equal("Karate");
+  });
+
   it('There is an attribute for each of its base stats', () => {
     expect([steve.getAttack(), steve.getDefense(), steve.getSpeed(),
       steve.getHitPoints()]).to.be.eql([40, 50, 10, 110]);
@@ -136,6 +174,10 @@ describe('LeagueOfLegends function tests', () => {
   it('There is an attribute for its name', () => {
     expect(garen.getName()).to.be.eql("Garen");
     expect(rakan.getName()).to.be.eql("Rakan");
+  });
+
+  it('There is an attribute for its catching phrase', () => {
+    expect(rakan.getCatchingPhrase()).to.be.equal("Looking good!");
   });
 
   it('There is an attribute for its weight and height', () => {
