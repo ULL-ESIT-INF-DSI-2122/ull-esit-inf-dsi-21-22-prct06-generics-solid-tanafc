@@ -8,7 +8,7 @@ type entryFighter = [name: string, attack: number, defense: number,
     role: FightingRole, universe: string];
 
 /**
- * Class Pokedex that stores the entries with information about Pokemons
+ * Class Pokedex that stores the entries with information about Fighters
  */
 export class Pokedex {
   public entries: entryFighter[] = [];
@@ -20,8 +20,8 @@ export class Pokedex {
   }
 
   /**
-   * Given certain Fighters, stores the information related to them as an entry
-   * @param fighter Fighters whose entries want to be added
+   * Given certain Fighters, stores the information related to them as an entry.
+   * @param fighter Fighters whose entries want to be added.
    */
   public storeFighters(...fighters: Fighter[]): void {
     fighters.forEach((fighter) => {
@@ -33,8 +33,8 @@ export class Pokedex {
 
   /**
    * Given certain names of Figthers, if the Fighter has an entry,
-   * said entry is deleted from the Pokedex
-   * @param fighters Names of the Fighters whose entries want to be deleted
+   * said entry is deleted from the Pokedex.
+   * @param fighters Names of the Fighters whose entries want to be deleted.
    */
   public deleteFighters(...fighters: string[]): void {
     fighters.forEach((fighter) => {

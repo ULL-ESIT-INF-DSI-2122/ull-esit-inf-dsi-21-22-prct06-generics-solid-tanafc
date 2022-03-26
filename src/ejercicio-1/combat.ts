@@ -18,11 +18,12 @@ export class Combat<T extends Fighter, U extends Fighter> {
   }
 
   /**
-   * Determinates the effectivity of the attack of an attack depending on the
-   * advantage of the opponents in their universe or in the role of them.
-   * @param attackOpponent Opponents who attacks
-   * @param defendOpponent Opponent who receives the attack
-   * @returns The effectivity of the attack given as a type Effectivity
+   * Determinates the effectivity of an attack depending on the
+   * advantage that the opponents have in their own universe, or
+   * the role that is established in different universes.
+   * @param attackOpponent Opponents who attacks.
+   * @param defendOpponent Opponent who receives the attack.
+   * @returns The effectivity of the attack given as a type Effectivity.
    */
   private effectivityStat(attackOpponent: (T | U), defendOpponent: (T | U)): Effectivity {
     let typeAdvantage: Effectivity = "Neutral";

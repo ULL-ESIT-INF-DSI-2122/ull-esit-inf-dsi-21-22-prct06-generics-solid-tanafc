@@ -1,6 +1,18 @@
+/**
+ * Type that defines the roles of different fighters
+ * in different universes.
+ */
 export type FightingRole = "Beast" | "Mage" | "Warrior"
+
+/**
+ * Type that defines the effectiveness of the attacks.
+ */
 export type Effectivity = "Effective" | "NotEffective" | "Neutral"
 
+/**
+ * Abstract class Fighter that defines a set of attributes and methods
+ * in common for fighters of different universes.
+ */
 export abstract class Fighter {
   constructor(protected name: string,
     protected attack: number, protected defense: number,
@@ -50,6 +62,11 @@ export abstract class Fighter {
     return this.role;
   }
 
+  /**
+   * If defined, returns the catching phrase of the fighter,
+   * otherwhise it returns an empty string.
+   * @returns the catching phrase of the fighter.
+   */
   public getCatchingPhrase(): string {
     if (this.catchingPhrase) {
       return this.catchingPhrase;
@@ -58,5 +75,11 @@ export abstract class Fighter {
     }
   }
 
+  /**
+   * Method to be implemented by child classes that establishes
+   * the rules of effectivity in the attacks of the fighters in
+   * the same universe.
+   * @param opponent opponent to check the effectivity of the attack.
+   */
   abstract getEffectivity(opponent: Fighter): Effectivity;
 }

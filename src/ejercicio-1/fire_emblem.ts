@@ -1,7 +1,14 @@
 import {Effectivity, Fighter} from './fighter';
 
+/**
+ * Type that defines the weapons of the heroes of FE.
+ */
 type weaponType = "Axe" | "Sword" | "Spear";
 
+/**
+ * Class that represents fighters of the universe of Fire Emblem. It
+ * defines significant attributes of this world.
+ */
 export class FireEmblem extends Fighter {
   constructor(hero: string, private weapon: weaponType,
       attack: number, defense: number, speed: number, hitPoints: number,
@@ -10,14 +17,28 @@ export class FireEmblem extends Fighter {
         mount ? hitPoints * 2 : hitPoints, weight, height, "Warrior", "FireEmblem", catchingPhrase);
   }
 
+  /**
+   * Returns the weapon that the hero uses.
+   * @returns the weapon as a string.
+   */
   public getWeapon(): weaponType {
     return this.weapon;
   }
 
+  /**
+   * Returns true if the unit is mounted.
+   * @returns boolean value.
+   */
   public isMounted(): boolean {
     return this.mount;
   }
 
+  /**
+   * Establishes the effectivity triangle between weapons in the universe,
+   * returning the Effectivity value.
+   * @param opponent opponent to check the effectivity depending on his weapon.
+   * @returns the effectivity value of the attack.
+   */
   public getEffectivity(opponent: FireEmblem): Effectivity {
     let typeAdvantage: Effectivity;
 

@@ -1,7 +1,14 @@
 import {Effectivity, Fighter} from './fighter';
 
+/**
+ * Type that represents the posible types of the Pokemons
+ */
 export type pokeType = "Fire" | "Water" | "Electric" | "Plant" | "Normal";
 
+/**
+ * Class that represents a set of attributes and methods
+ * for the Pokemons in the Pokemon universe.
+ */
 export class Pokemon extends Fighter {
   constructor(name: string, private type: pokeType,
       attack: number, defense: number, speed: number, hitPoints: number,
@@ -10,6 +17,11 @@ export class Pokemon extends Fighter {
         "Beast", "Pokemon", catchingPhrase);
   }
 
+  /**
+   * If defined, returns the alias of the pokemon, otherwhise
+   * it returns 'Este pokemon no tiene mote'.
+   * @returns a string containing the alias.
+   */
   public getAlias(): string {
     if (this.alias) {
       return this.alias;
@@ -25,6 +37,12 @@ export class Pokemon extends Fighter {
     return this.type;
   }
 
+  /**
+   * Method that returns the effectivity value of an attack depending
+   * on the types that the Pokemons have.
+   * @param opponent opponent to check the effectivity with.
+   * @returns the effectivity value of an attack.
+   */
   public getEffectivity(opponent: Pokemon): Effectivity {
     switch (this.getType()) {
       case "Fire":
