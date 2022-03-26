@@ -12,6 +12,8 @@
     "./src/ejercicio-2/movies.ts",
     "./src/ejercicio-2/series.ts",
     "./src/ejercicio-2/streamable.ts",
+    "./src/ejercicio-3/cifrado.ts",
+    "./src/ejercicio-3/cifrado_cesar.ts",
     "./src/modificacion/modificacion.ts"
   ],
   "out": "./docs"

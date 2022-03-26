@@ -1,10 +1,19 @@
 import {Cifrado} from './cifrado';
 
+/**
+ * Class that implements a set of methods for the cipher and
+ * decipher of the Cesar encode. It extends the abstract class Cifrado
+ */
 export class CifradoCesar extends Cifrado {
   constructor(key: string = "", alphabet: string = "") {
     super(key, alphabet);
   }
 
+  /**
+   * Starts the encode of the given message, returning the cipher
+   * @param plainMessage message to be encoded
+   * @returns the encoded message
+   */
   public startCipher(plainMessage: string): string {
     if (this.key === "" || this.alphabet.length === 0 || plainMessage === "") {
       return "Cypher cannot start unless given a key, alphabet and message";
@@ -40,6 +49,11 @@ export class CifradoCesar extends Cifrado {
     return cypherMessage;
   }
 
+  /**
+   * Starts the decode of the given encoded message, returning said message
+   * @param encodedMessage encoded message to decode
+   * @returns the decoded message
+   */
   public startDecipher(encodedMessage: string): string {
     if (this.key === "" || this.alphabet.length === 0 || encodedMessage === "") {
       return "Decypher cannot start unless given a key, alphabet and message";
