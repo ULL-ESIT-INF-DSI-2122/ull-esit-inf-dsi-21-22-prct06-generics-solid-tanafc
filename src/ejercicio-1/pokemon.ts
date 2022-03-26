@@ -65,3 +65,7 @@ export class Pokemon extends Fighter {
     }
   }
 }
+
+let pikachu = new Pokemon("Pikachu", "Electric", 20, 5, 55, 40, 90, 35, 'Ash');
+let squirtle = new Pokemon("Squirtle", "Water", 20, 5, 55, 40, 90, 35, 'Ash');
+squirtle.getEffectivity(pikachu);

@@ -26,13 +26,13 @@ export class LeagueOfLegends extends Fighter {
 
   public getEffectivity(opponent: LeagueOfLegends): Effectivity {
     if (this.getDamageAP() > this.getDamageAD()) {
-      if (this.getDamageAP() >= opponent.getMagicResist()) {
+      if (this.getDamageAP() > opponent.getMagicResist()) {
         return "Effective";
       } else {
         return "NotEffective";
       }
-    } if (this.getDamageAP() < this.getDamageAD()) {
-      if (this.getDamageAD() >= opponent.getArmor()) {
+    } else if (this.getDamageAP() < this.getDamageAD()) {
+      if (this.getDamageAD() > opponent.getArmor()) {
         return "Effective";
       } else {
         return "NotEffective";

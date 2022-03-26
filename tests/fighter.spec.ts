@@ -9,6 +9,8 @@ import {Fighter} from '../src/ejercicio-1/fighter';
 
 describe('Pokemon function tests', () => {
   let pikachu = new Pokemon("Pikachu", "Electric", 20, 5, 55, 40, 90, 35, 'Ash');
+  let squirtle = new Pokemon("Squirtle", "Water", 20, 5, 55, 40, 90, 35, 'Ash');
+  let flareon = new Pokemon("Flareon", "Fire", 20, 5, 55, 40, 90, 35);
   let eevee = new Pokemon("Eevee", "Electric", 20, 5, 55, 40, 90, 35);
 
   it('It creates a new instance of an object with class Pokemon', () => {
@@ -36,11 +38,18 @@ describe('Pokemon function tests', () => {
     expect([pikachu.getAttack(), pikachu.getDefense(), pikachu.getSpeed(),
       pikachu.getHitPoints()]).to.be.eql([20, 5, 55, 40]);
   });
+
+  it('There is a method that calculates the effectiveness of attacks between pokemons', () => {
+    expect(pikachu.getEffectivity(squirtle)).to.be.equal("Effective");
+    expect(squirtle.getEffectivity(pikachu)).to.be.equal("NotEffective");
+    expect(pikachu.getEffectivity(flareon)).to.be.equal("Neutral");
+  });
 });
 
 
 describe('Fire Emblem function tests', () => {
   let chrom = new FireEmblem("Chrom", "Sword", 20, 5, 55, 40, 90, 35, false);
+  let byleth = new FireEmblem("Byleth", "Spear", 20, 5, 55, 40, 90, 35, false);
   let ike = new FireEmblem("Ike", "Axe", 20, 5, 55, 40, 90, 35, false);
 
   it('It creates a new instance of an object with class FireEmblem', () => {
@@ -64,6 +73,12 @@ describe('Fire Emblem function tests', () => {
     expect([chrom.getAttack(), chrom.getDefense(), chrom.getSpeed(),
       chrom.getHitPoints()]).to.be.eql([20, 5, 55, 40]);
   });
+
+  it('There is a method that calculates the effectiveness of attacks between heroes', () => {
+    expect(chrom.getEffectivity(ike)).to.be.equal("Effective");
+    expect(ike.getEffectivity(chrom)).to.be.equal("NotEffective");
+    expect(byleth.getEffectivity(byleth)).to.be.equal("Neutral");
+  });
 });
 
 
@@ -71,6 +86,7 @@ describe('Tekken function tests', () => {
   let kazuya = new Tekken("Kazuya Mishima", "Japanese", "Karate", 10, 5, 90, 170, "Worthless");
   let lee = new Tekken("Lee Chaolan", "Japanese", "Mixed", 0, 5, 90, 160, "Excellent!");
   let eddy = new Tekken("Eddy Gordo", "Brazil", "Capoeira", 0, 15, 90, 180, "Vamos allá!");
+  let king = new Tekken("King", "Mexico", "Wrestling", 0, 20, 100, 180);
   let steve = new Tekken("Steve", "American", "Boxing", 0, 15, 90, 175, "Wanna try me?");
 
   it('It creates a new instance of an object with class FireEmblem', () => {
@@ -94,12 +110,20 @@ describe('Tekken function tests', () => {
     expect([steve.getAttack(), steve.getDefense(), steve.getSpeed(),
       steve.getHitPoints()]).to.be.eql([40, 50, 10, 110]);
   });
+
+  it('There is a method that calculates the effectiveness of attacks between fighters', () => {
+    expect(eddy.getEffectivity(steve)).to.be.equal("Effective");
+    expect(eddy.getEffectivity(king)).to.be.equal("NotEffective");
+    expect(kazuya.getEffectivity(lee)).to.be.equal("Neutral");
+  });
 });
 
 
 describe('LeagueOfLegends function tests', () => {
   let rakan = new LeagueOfLegends("Rakan", 10, 20, 40, 50, 400, 2050, 70, 180, "Looking good!");
   let garen = new LeagueOfLegends("Garen", 100, 0, 50, 40, 400, 3050, 70, 180, "Demaciaaa!");
+  let darius = new LeagueOfLegends("Darius", 100, 0, 100, 40, 400, 3050, 70, 180, "Demaciaaa!");
+  let corki = new LeagueOfLegends("Corki", 20, 20, 100, 40, 400, 1000, 70, 180);
 
   it('It creates a new instance of an object with class LeagueOfLegends', () => {
     expect(garen).to.be.instanceOf(LeagueOfLegends);
@@ -121,5 +145,11 @@ describe('LeagueOfLegends function tests', () => {
   it('There is an attribute for each of its base stats', () => {
     expect([rakan.getAttack(), rakan.getDefense(), rakan.getSpeed(),
       rakan.getHitPoints()]).to.be.eql([30, 90, 400, 2050]);
+  });
+
+  it('There is a method that calculates the effectiveness of attacks between champions', () => {
+    expect(rakan.getEffectivity(garen)).to.be.equal("NotEffective");
+    expect(garen.getEffectivity(rakan)).to.be.equal("Effective");
+    expect(corki.getEffectivity(darius)).to.be.equal("Neutral");
   });
 });

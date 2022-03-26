@@ -36,8 +36,8 @@ export class Tekken extends Fighter {
       } else {
         return "Neutral";
       }
-    } else if (this.getMartialArt() == "Karate" || this.getMartialArt() == "Muay Thai" &&
-        opponent.getMartialArt() == "Karate" || opponent.getMartialArt() == "Muay Thai") {
+    } else if ((this.getMartialArt() == "Karate" || this.getMartialArt() == "Muay Thai") &&
+        (opponent.getMartialArt() == "Karate" || opponent.getMartialArt() == "Muay Thai")) {
       return "Effective";
     } else {
       return "Neutral";

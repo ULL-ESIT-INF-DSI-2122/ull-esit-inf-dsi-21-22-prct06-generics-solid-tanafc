@@ -21,11 +21,11 @@ export class FireEmblem extends Fighter {
   public getEffectivity(opponent: FireEmblem): Effectivity {
     let typeAdvantage: Effectivity;
 
-    switch (opponent.getWeapon()) {
+    switch (this.getWeapon()) {
       case "Sword":
-        if (this.getWeapon() == "Spear") {
+        if (opponent.getWeapon() == "Spear") {
           typeAdvantage = "NotEffective";
-        } else if (this.getWeapon() == "Axe") {
+        } else if (opponent.getWeapon() == "Axe") {
           typeAdvantage = "Effective";
         } else {
           typeAdvantage = "Neutral";
@@ -33,9 +33,9 @@ export class FireEmblem extends Fighter {
         break;
 
       case "Spear":
-        if (this.getWeapon() == "Sword") {
+        if (opponent.getWeapon() == "Sword") {
           typeAdvantage = "Effective";
-        } else if (this.getWeapon() == "Axe") {
+        } else if (opponent.getWeapon() == "Axe") {
           typeAdvantage = "NotEffective";
         } else {
           typeAdvantage = "Neutral";
@@ -43,9 +43,9 @@ export class FireEmblem extends Fighter {
         break;
 
       case "Axe":
-        if (this.getWeapon() == "Spear") {
+        if (opponent.getWeapon() == "Spear") {
           typeAdvantage = "Effective";
-        } else if (this.getWeapon() == "Sword") {
+        } else if (opponent.getWeapon() == "Sword") {
           typeAdvantage = "NotEffective";
         } else {
           typeAdvantage = "Neutral";
