@@ -915,7 +915,7 @@ export class DocumentalStreamable extends BasicStreamableCollection<Documental> 
 
 De esta manera, se implementarían las tres subclases con los tres tipos de colecciones de streaming: series, películas y documentales. Ejecutando las pruebas del código, se comprobará la correcta implementación de las clases:
 
-![Ejecución pruebas Películas](./img/movie.PNG)
+![Ejecución pruebas Películas](./img/movies.PNG)
 
 ![Ejecución pruebas Series](./img/series.PNG)
 
