@@ -794,7 +794,7 @@ export abstract class BasicStreamableCollection<T extends {name: string, year: n
 
 Se observa como la clase a implementado los métodos `addMedia`, que introduce un elemento `T` dentro de la colección, `deleteMedia`, que borra de la colección el elemento cuyo nombre coincida con el proporcionado en el argumento, y los métodos correspondientes a la búsqueda dentro de la colección, `searchNameMedia` y `searchYearMedia` gracias a la función `filter`. Sabemos que los elementos de la colección tienen atributos de nombre y año gracias a que hemos especificado la forma del tipo `T` para que lo tengan. Además, se implementan getters para la colección, así como `getMediaAt` para tomar un elemento de la misma y `getNumberStreams` para el número de elementos.
 
-Las clases que extenderán la clase `BasicStreamableCollection` modelarán cada uno de los tres tipos de colecciones, series, películas y documentales, cada uno representado por su propia clase.
+Las clases que extenderán la clase `BasicStreamableCollection` modelarán cada uno de los tres tipos de colecciones: series, películas y documentales, cada uno representado por su propia clase.
 
 #### Películas
 Las películas se particulazarán por tener una serie de géneros, definidos en el tipo `Genre`. Con ello, una clase `Movie` establecerá los atributos que toda película deberá tener, siendo esto su nombre, año, director, género y duración:
