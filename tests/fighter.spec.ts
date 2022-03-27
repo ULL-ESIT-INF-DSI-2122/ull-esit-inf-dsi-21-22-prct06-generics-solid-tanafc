@@ -107,7 +107,7 @@ describe('Tekken function tests', () => {
   let king = new Tekken("King", "Mexico", "Wrestling", 0, 20, 100, 180);
   let steve = new Tekken("Steve", "American", "Boxing", 0, 15, 90, 175, "Wanna try me?");
 
-  it('It creates a new instance of an object with class FireEmblem', () => {
+  it('It creates a new instance of an object with class Tekken', () => {
     expect(kazuya).to.be.instanceOf(Tekken);
   });
 
